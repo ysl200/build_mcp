@@ -1,5 +1,5 @@
 # tests/common/test_config.py
-from build_mcp.common.config import load_config
+from src.build_mcp.common.config import load_config
 
 
 def test_load_config():

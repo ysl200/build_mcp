@@ -6,9 +6,9 @@ from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel
 from pydantic import Field
 
-from build_mcp.common.config import load_config
-from build_mcp.common.logger import get_logger
-from build_mcp.services.gd_sdk import GdSDK
+from src.build_mcp.common.config import load_config
+from src.build_mcp.common.logger import get_logger
+from src.build_mcp.services.gd_sdk import GdSDK
 
 # 优先从环境变量里读取API_KEY，如果没有则从配置文件读取
 env_api_key = os.getenv("API_KEY")
@@ -17,7 +17,7 @@ if env_api_key:
     config["api_key"] = env_api_key
 
 # 初始化 FastMCP 服务
-mcp = FastMCP("amap-maps", description="高德地图 MCP 服务", version="1.0.0")
+mcp = FastMCP("amap-maps", instructions="高德地图 MCP 服务")
 sdk = GdSDK(config=config, logger=get_logger(name="gd_sdk"))
 logger = get_logger(name="amap-maps")
 

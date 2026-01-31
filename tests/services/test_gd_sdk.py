@@ -4,10 +4,10 @@ import os
 import pytest
 import pytest_asyncio
 
-from build_mcp.services.gd_sdk import GdSDK
-from build_mcp.common.logger import get_logger
+from src.build_mcp.services.gd_sdk import GdSDK
+from src.build_mcp.common.logger import get_logger
 
-API_KEY = os.getenv("API_KEY", "your_api_key_here")  # 从环境变量获取 API Key，或使用默认值
+API_KEY = os.getenv("API_KEY", "api-key")  # 从环境变量获取 API Key，或使用默认值
 
 
 @pytest_asyncio.fixture

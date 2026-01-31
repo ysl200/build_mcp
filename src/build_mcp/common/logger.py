@@ -3,7 +3,7 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
-from build_mcp.common.config import load_config
+from src.build_mcp.common.config import load_config
 
 config = load_config("config.yaml")
 
